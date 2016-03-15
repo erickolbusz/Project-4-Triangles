@@ -32,7 +32,7 @@ unsigned long triangle::area() {
 	// TODO: write this function.
 	// Note: why is it okay to return an integer here?  Recall that
 	// all of our triangles have integer sides, and are right triangles...
-	return 0;
+	return s1*s2/2;
 }
 
 void triangle::print() {
@@ -41,7 +41,10 @@ void triangle::print() {
 
 bool congruent(triangle t1, triangle t2) {
 	// TODO: write this function.
-	return false;
+	if (t1.s1 == t2.s1 && t1.s2 == t2.s2 && t1.s3 == t2.s3)
+		return true;
+	else
+		return false;
 }
 
 bool similar(triangle t1, triangle t2) {
