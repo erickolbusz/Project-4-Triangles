@@ -41,10 +41,7 @@ void triangle::print() {
 
 bool congruent(triangle t1, triangle t2) {
 	// TODO: write this function.
-	if (t1.s1 == t2.s1 && t1.s2 == t2.s2 && t1.s3 == t2.s3)
-		return true;
-	else
-		return false;
+	return  (t1.s1 == t2.s1 && t1.s2 == t2.s2 && t1.s3 == t2.s3);
 }
 
 bool similar(triangle t1, triangle t2) {
