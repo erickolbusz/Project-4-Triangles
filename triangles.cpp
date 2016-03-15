@@ -7,6 +7,8 @@
  * NOT mean it is okay to COPY THAT SOURCE.  What you submit here **MUST BE
  * YOUR OWN WORK**.
  * References:
+ * http://stackoverflow.com/questions/9424173/c-find-the-smallest-amongst-3-numbers
+ *
  *
  *
  * Finally, please indicate approximately how many hours you spent on this:
@@ -40,13 +42,16 @@ void triangle::print() {
 }
 
 bool congruent(triangle t1, triangle t2) {
-	// TODO: write this function.
 	return  (t1.s1 == t2.s1 && t1.s2 == t2.s2 && t1.s3 == t2.s3);
 }
 
 bool similar(triangle t1, triangle t2) {
-	// TODO: write this function.
-	return false;
+	//if the smaller leg and hypotnuse are similar then the longer leg must also be similar
+        double min_t1 = double(std::min(std::min(t1.s1,t1.s2),t1.s3));
+        double max_t1 = double(std::max(std::max(t1.s1,t1.s2),t1.s3));
+        double min_t2 = double(std::min(std::min(t2.s1,t2.s2),t2.s3));
+        double max_t2 = double(std::max(std::max(t2.s1,t2.s2),t2.s3));
+	return (max_t2/max_t1 == min_t2/min_t1);
 }
 
 vector<triangle> findRightTriangles(unsigned long l, unsigned long h) {
