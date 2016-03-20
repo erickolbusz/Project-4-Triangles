@@ -12,7 +12,7 @@
  *
  *
  * Finally, please indicate approximately how many hours you spent on this:
- * #hours: 
+ * #hours:
  */
 
 #include "triangles.h" // import the prototypes for our triangle class.
@@ -22,6 +22,7 @@ using std::cout;
 using std::vector;
 #include <algorithm>
 using std::sort;
+#include <math.h>
 
 // note the "triangle::" part.  We need to specify the function's
 // FULL name to avoid confusion.  Else, the compiler will think we
@@ -58,6 +59,20 @@ vector<triangle> findRightTriangles(unsigned long l, unsigned long h) {
 	// TODO: find all the right triangles with integer sides,
 	// subject to the perimeter bigger than l and less than h
 	vector<triangle> retval; // storage for return value.
+	for(unsigned long b=4;b<h/2;b++){
+		for(unsigned long a=3;a<b;a++){
+			long double c= sqrt(a*a + b*b);
+			unsigned long k=c;
+			if(k==c){
+				//triangle temp= new triangle(a,b,c);
+				unsigned long perimeter = a+b+c; //temp.perimeter();
+				if ((perimeter>l)&&(perimeter<h)){
+					//temp.print();
+					//retval.push_back(temp);
+					cout << "[" << a << "," << b << "," << c << "]" << "=" << perimeter << "\n";
+				}
+			}
+		}
+	}
 	return retval;
 }
-

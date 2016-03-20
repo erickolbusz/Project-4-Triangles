@@ -15,6 +15,7 @@ int main(void) {
 	cout << "Perimeter t2 = " << b.perimeter() << endl << "Area t2 = " << b.area() << endl;
 	cout << "Congruent or na = " << congruent(a,b) << endl;
 	cout << "Are they similar tho = " << similar(a,c) << endl;
+	findRightTriangles(100,300);
+
 	return 0;
 }
-
