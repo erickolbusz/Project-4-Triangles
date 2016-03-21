@@ -64,12 +64,11 @@ vector<triangle> findRightTriangles(unsigned long l, unsigned long h) {
 			long double c= sqrt(a*a + b*b);
 			unsigned long k=c;
 			if(k==c){
-				//triangle temp= new triangle(a,b,c);
-				unsigned long perimeter = a+b+c; //temp.perimeter();
+				triangle temp = triangle(a,b,c);
+				//unsigned long perimeter = a+b+c;
+				unsigned long perimeter = temp.perimeter();
 				if ((perimeter>l)&&(perimeter<h)){
-					//temp.print();
-					//retval.push_back(temp);
-					cout << "[" << a << "," << b << "," << c << "]" << "=" << perimeter << "\n";
+					retval.push_back(temp);
 				}
 			}
 		}

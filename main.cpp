@@ -15,7 +15,17 @@ int main(void) {
 	cout << "Perimeter t2 = " << b.perimeter() << endl << "Area t2 = " << b.area() << endl;
 	cout << "Congruent or na = " << congruent(a,b) << endl;
 	cout << "Are they similar tho = " << similar(a,c) << endl;
-	findRightTriangles(100,300);
-
+	cout << "Triangles that have perimeter between 20 and 50:\n";
+	vector<triangle> retval=findRightTriangles(20,50);
+	for(int i =0; i<retval.size();i++){
+		retval[i].print();
+		cout << "\n";
+	}
+	cout << "Triangles that have perimeter between 10020 and 10100:\n";
+	retval = findRightTriangles(10020,10100);
+	for(int i =0; i<retval.size();i++){
+		retval[i].print();
+		cout << "\n";
+	}
 	return 0;
 }
