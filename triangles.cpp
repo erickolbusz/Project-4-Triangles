@@ -51,17 +51,17 @@ bool congruent(triangle t1, triangle t2) {
 }
 
 bool similar(triangle t1, triangle t2) {
-	//if the smaller leg and hypotnuse are similar then the longer leg must also be similar
-        double min_t1 = double(std::min(std::min(t1.s1,t1.s2),t1.s3));
-        double max_t1 = double(std::max(std::max(t1.s1,t1.s2),t1.s3));
-        double min_t2 = double(std::min(std::min(t2.s1,t2.s2),t2.s3));
-        double max_t2 = double(std::max(std::max(t2.s1,t2.s2),t2.s3));
-	return (max_t2/max_t1 == min_t2/min_t1);
+	int sides_t1[3] = {t1.s1, t1.s2, t1.s3};
+	int sides_t2[3] = {t2.s1, t2.s2, t2.s3};
+	sort(sides_t1, sides_t1 + 3);
+	sort(sides_t2, sides_t2 + 3);
+	double ratio_1 = double(sides_t1[0])/double(sides_t2[0]);
+	double ratio_2 = double(sides_t1[1])/double(sides_t2[1]);
+	double ratio_3 = double(sides_t1[2])/double(sides_t2[2]);
+	return (ratio_1 == ratio_2 && ratio_2 == ratio_3);
 }
 
 vector<triangle> findRightTriangles(unsigned long l, unsigned long h) {
-	// TODO: find all the right triangles with integer sides,
-	// subject to the perimeter bigger than l and less than h
 	vector<triangle> retval; // storage for return value.
 	for(unsigned long b=4;b<h/2;b++){
 		for(unsigned long a=3;a<b;a++){
