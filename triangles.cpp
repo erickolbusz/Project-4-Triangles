@@ -35,7 +35,9 @@ unsigned long triangle::area() {
 	// TODO: write this function.
 	// Note: why is it okay to return an integer here?  Recall that
 	// all of our triangles have integer sides, and are right triangles...
-	return s1*s2/2;
+	int sides[3] = {s1, s2, s3};
+	sort(sides, sides + 3);
+	return sides[0]*sides[1]/2;
 }
 
 void triangle::print() {
