@@ -73,7 +73,7 @@ vector<triangle> findRightTriangles(unsigned long l, unsigned long h) {
 				triangle temp = triangle(a,b,c);
 				//unsigned long perimeter = a+b+c;
 				unsigned long perimeter = temp.perimeter();
-				if ((perimeter>l)&&(perimeter<h)){
+				if ((perimeter>=l)&&(perimeter<=h)){
 					retval.push_back(temp);
 				}
 			}
