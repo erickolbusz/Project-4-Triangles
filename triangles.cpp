@@ -43,15 +43,10 @@ void triangle::print() {
 }
 
 bool congruent(triangle t1, triangle t2) {
-	vector<int> sides_t1, sides_t2;
-	sides_t1.push_back(t1.s1);
-	sides_t1.push_back(t1.s2);
-	sides_t1.push_back(t1.s3);
-	sides_t2.push_back(t2.s1);
-	sides_t2.push_back(t2.s2);
-	sides_t2.push_back(t2.s3);
-	sort(sides_t1.begin(), sides_t1.end());
-	sort(sides_t2.begin(), sides_t2.end());
+	int sides_t1[3] = {t1.s1, t1.s2, t1.s3};
+	int sides_t2[3] = {t2.s1, t2.s2, t2.s3};
+	sort(sides_t1, sides_t1 + 3);
+	sort(sides_t2, sides_t2 + 3);
 	return (sides_t1[0]==sides_t2[0] && sides_t1[1]==sides_t2[1] && sides_t1[2]==sides_t2[2]);
 }
 
